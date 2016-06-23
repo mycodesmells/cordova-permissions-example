@@ -44,19 +44,15 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        try {
-            navigator.contacts.find(
-                [navigator.contacts.fieldType.displayName],
-                function(contacts){
-                    alert("We found " + contacts.length + " contacts on your device!");
-                }, function(contactError) {
-                    alert('onError! ' + contactError);
-                }, {
-                    multiple: true
-                });
-        } catch(err) {
-            alert('Error: ' + err);
-        }
+        navigator.contacts.find(
+            [navigator.contacts.fieldType.displayName],
+            function(contacts){
+                alert("We found " + contacts.length + " contacts on your device!");
+            }, function(contactError) {
+                alert('onError! ' + contactError);
+            }, {
+                multiple: true
+            });
 
         alert('Hello!');
 
